@@ -11,13 +11,6 @@ export const FeedbackComponent =()=>{
    const[neutral,setNeutral]=useState(0);
    const[bad,setBad]=useState(0);
 
-
-
-    // state={
-    // good: 0,
-    // neutral: 0,
-    // bad: 0
-    // }
     
   const  onBtnClick=(ev)=>{
     console.dir(ev.target)
