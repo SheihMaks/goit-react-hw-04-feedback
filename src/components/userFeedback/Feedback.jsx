@@ -7,9 +7,9 @@ import { Notification } from '../NotificationMsg/Notification';
 
 export const FeedbackComponent =()=>{
     
-   const [good,setGood]=useState(0);
-   const[neutral,setNeutral]=useState(0);
-   const[bad,setBad]=useState(0);
+    const [good,setGood]=useState(0);
+    const[neutral,setNeutral]=useState(0);
+    const[bad,setBad]=useState(0);
 
     const  onBtnClick=(ev)=>{
         const {textContent:key}= ev.target
@@ -19,23 +19,21 @@ export const FeedbackComponent =()=>{
         case ('neutral'): setNeutral((prev)=>prev+1)
         break;
         default:setBad((prev)=>prev+1)
-        
-           }
+        }
         // if(key==='good')setGood((prev)=>prev+1);
         // if(key==='neutral')setNeutral((prev)=>prev+1);
         // if(key==='bad')setBad((prev)=>prev+1);
     }
 
-  const  countTotalFeedback=()=>{
-       return good + neutral + bad
+    const  countTotalFeedback=()=>{
+        return good + neutral + bad
     }
 
-  const  countPositiveFeedbackPercentage=()=>{
-return Math.round((good/countTotalFeedback())*100)
+    const  countPositiveFeedbackPercentage=()=>{
+        return Math.round((good/countTotalFeedback())*100)
     }
 
-    
-        const total = countTotalFeedback();
+    const total = countTotalFeedback();
         return(<FeedBackMain><Section title='Please leave feedback'>
             <Controls 
             options={['good','neutral','bad']}
@@ -48,7 +46,9 @@ return Math.round((good/countTotalFeedback())*100)
             neutral={neutral}
             bad={bad}
             total={countTotalFeedback()}
-            positivePercentage={countPositiveFeedbackPercentage()}/>):(<Notification title='There is no feedback'/>)}</Section>
-</FeedBackMain>
+            positivePercentage={countPositiveFeedbackPercentage()}/>):(<Notification 
+            title='There is no feedback'/>)}
+            </Section>
+            </FeedBackMain>
             )
     }
