@@ -13,13 +13,18 @@ export const FeedbackComponent =()=>{
 
     
   const  onBtnClick=(ev)=>{
-    console.dir(ev.target)
-    console.log(good)
         const {textContent:key}= ev.target
-        if(key==='good')setGood((prev)=>prev+1);
-        if(key==='neutral')setNeutral((prev)=>prev+1);
-        if(key==='bad')setBad((prev)=>prev+1);
-// this.setState((prevState)=>({ [key] : prevState[key]+=1}))
+        switch (key){
+        case ('good'): setGood((prev)=>prev+1)
+        break;
+        case ('neutral'): setNeutral((prev)=>prev+1)
+        break;
+        default:setBad((prev)=>prev+1)
+        
+           }
+        // if(key==='good')setGood((prev)=>prev+1);
+        // if(key==='neutral')setNeutral((prev)=>prev+1);
+        // if(key==='bad')setBad((prev)=>prev+1);
     }
 
   const  countTotalFeedback=()=>{
