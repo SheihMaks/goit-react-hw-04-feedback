@@ -11,8 +11,7 @@ export const FeedbackComponent =()=>{
    const[neutral,setNeutral]=useState(0);
    const[bad,setBad]=useState(0);
 
-    
-  const  onBtnClick=(ev)=>{
+    const  onBtnClick=(ev)=>{
         const {textContent:key}= ev.target
         switch (key){
         case ('good'): setGood((prev)=>prev+1)
